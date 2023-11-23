@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2D CSS Transforms</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-repeat: no-repeat;
+        }
+        p {
+            height: 100px;
+            width: 100px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+        }
+        p#rotate {
+            background-color: orange;
+            transform: rotate(90deg); /* Initial rotation */
+        }
+        p#scale {
+            background-color: purple;
+            transform: scale(1.5); /* Initial scale */
+        }
+        p#skew {
+            background-color: limegreen;
+            transform: skew(20deg); /* Initial skew */
+        }
+        p#translate {
+            background-color: hotpink;
+            transform: translate(20, 20); /* Initial translation */
+        }
+        p#unique {
+            background-color: skyblue; /* Unique color for the 5th paragraph element */
+            animation: rotateScale 4s linear infinite; /* Applying the animation */
+        }
+
+        /* Hover effect for each paragraph element */
+        p#rotate:hover {
+            transform: rotate(-60deg);
+        }
+        p#scale:hover {
+            transform: scale(2);
+        }
+        p#skew:hover {
+            transform: skew(50deg);
+        }
+        p#translate:hover {
+            transform: translate(40px, 40px);
+        }
+
+        /* Keyframe animation for the 5th paragraph element */
+        @keyframes rotateScale {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                transform: rotate(90deg) scale(1.2);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.5);
+            }
+            75% {
+                transform: rotate(270deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <p id="rotate">Rotate me.</p>
+    <p id="scale">Scale me.</p>
+    <p id="skew">Skew me.</p>
+    <p id="translate">Translate me.</p>
+    <p id="unique">Unique color</p>
+</body>
+</html>
